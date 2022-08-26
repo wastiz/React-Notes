@@ -98,7 +98,7 @@ class WhoAmI2 extends Component{ //аргумент этой функции яв
         <a href={link}>My profile</a>
         <span>
           <p>Введите должность</p>
-          <input type="text" onChange={(e) => this.commitInputChanges(e, 'somecolor')}/> {/*Также если нужно передать какие-то аргументы, то оборачиваем в стрелочную функцию и указываем их в функции*/}
+          <input type="text" onChange={(e) => this.commitInputChanges(e , 'somecolor')}/> {/*Также если нужно передать какие-то аргументы, то оборачиваем в стрелочную функцию и указываем их в функции*/}
       </span>
       </div>
     )

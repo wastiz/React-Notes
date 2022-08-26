@@ -29,6 +29,26 @@ class App extends Component {
       }
     })
   }
+  onToggleIncrease = (id) => {
+    console.log(`increase this employee ${id}`)
+  }
+  onToggleRise = (id) => {
+    console.log(`rise this ${id}`)
+  }
+  addItem = (name, salary) => {
+    const newItem = {
+        name, 
+        salary,
+        increase: false,
+        id: this.maxId++
+    }
+    this.setState(({data}) => {
+        const newArr = [...data, newItem];
+        return {
+            data: newArr
+        }
+    });
+  }
   render () {
     const {data} = this.state
     return (
@@ -41,7 +61,10 @@ class App extends Component {
           </div>
           
           <EmployeesList data={data}
-          onDelete={this.deleteItem}/> {/*Здесь нам нужно указать атрибут, что компонент будет ссылаться на это */}
+          onDelete={this.deleteItem}
+          onToggleIncrease={this.onToggleIncrease}
+          onToggleRise={this.onToggleRise}
+          onAdd={this.addItem}/> {/*Здесь нам нужно указать атрибут, что компонент будет ссылаться на это */}
           <EmployeesAddForm/>
       </div>
     );
