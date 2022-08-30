@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import React, {StrictMode} from 'react'; //Также синтаксисом деструктуризацией мы вытаскиваем строгий режим, который является аналагом 'use strict'
 import { Component } from 'react';
 import logo from './logo.svg';
@@ -148,11 +149,14 @@ class Calculator extends React.Component { //Практика со state
     )
   }
 }
-
+const Wrapper = styled.div`
+  width: 600px;
+  margin: 80px auto 0 auto
+`
 function App() {
   return (
     <StrictMode> {/*Можно сказать что это jshint*/}
-    <div className="App">
+    <Wrapper>
        <Header /> {/* Как и всегда помним, что нужно закрывать теги, но еслинадо еще что-то вложить, то закрываем как другие теги */}
        <Login/>
        <Section></Section>
@@ -161,7 +165,7 @@ function App() {
        Поэтому берем за правило. В props же мы можем передавать все что угодно, даже те самые объекты, которые на страницу не модем вставить*/}
        <Calculator/>
        <Footer></Footer>
-    </div>
+    </Wrapper>
     </StrictMode>
   );
 }

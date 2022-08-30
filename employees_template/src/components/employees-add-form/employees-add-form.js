@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import './employees-add-form.css';
+import './employees-add-form.scss';
 
 class EmployeesAddForm extends Component {
     constructor(props) {
@@ -50,7 +50,7 @@ class EmployeesAddForm extends Component {
     
                     <button type="submit"
                             className="btn btn-outline-light"
-                            onAdd={this.onSubmit}>Добавить</button>
+                            onSubmit={this.onSubmit}>Добавить</button>
                 </form>
             </div>
         )
