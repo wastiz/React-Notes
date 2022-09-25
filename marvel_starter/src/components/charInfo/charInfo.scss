@@ -21,11 +21,6 @@
         display: grid;
         grid-template-columns: 150px auto;
         column-gap: 25px;
-        img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
     }
     &__btns {
         margin-top: 35px;
@@ -62,4 +57,14 @@
         text-align: center;
     }
 
+}
+.randomchar__img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.randomchar__img_not_found{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
