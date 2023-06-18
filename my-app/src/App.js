@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React, {StrictMode} from 'react'; //Также синтаксисом деструктуризацией мы вытаскиваем строгий режим, который является аналагом 'use strict'
 import { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 //Итак, созданный автоматически app.js и я вляется как раз компонентом
