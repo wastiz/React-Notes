@@ -1,35 +1,36 @@
 import './App.css';
-//import {Component} from 'react';
+import MyButton from './MyButton'
+import {Component} from 'react';
 
 
 
-const data = [
-	{title: 'Smth', price: 20},
-	{title: 'In', price: 30},
-	{title: 'My ass', price: 40}
-]
+class App extends Component() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      setCount: 0
+    }
+  }
 
-function WhoAmI(props) {
-  data.map(item => {
+  handleClick = () => {
+    this.setState(state => ({ 
+      count: state.count + 1
+    }))
+  }
+
+  render() {
+    const {count} = this.props
     return (
       <div>
-        <h1>My name is: {item.title}, Surname is: {item.price}</h1>
-        <a href={item.link}>That is my profile</a>
+        <h1>Счетчики, изменяющиеся вместе</h1>
+        <MyButton count={count} onClick={this.handleClick} />
+        <MyButton count={count} onClick={this.handleClick} />
       </div>
-    )
-  })
-
+    );
+  }
 }
 
-function App() {
-  return (
-      <div className="App">
-          <WhoAmI name='John' surname='Smith' link='facebook.com'/>
-          <WhoAmI name='John' surname='Smith' link='facebook.com'/>
-          <WhoAmI name='John' surname='Smith' link='facebook.com'/>
-      </div>
-  )
-}
 
 
 export default App;
