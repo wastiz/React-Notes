@@ -10,13 +10,12 @@ class MarvelService {
         } else {
             return await res.json();
         }
-
     }
     getAllCharacters = async (offset = this._baseOffset) => {
         const res = await this.getResource(`${this._apiBase}characters?limit=9&offset=${offset}&${this._apiKey}`);
         return res.data.results.map(this._transformCharacter);
     }
-    getCharacter = async (id) => { //Если кто не помнит, то операторы async и await работают только вместе
+    getCharacter = async (id) => { //async и await работают только вместе
         const res = await this.getResource(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=015af1cd34cd5db81cd2dc1aec14e0c3`)
         return this._transformCharacter(res.data.results[0]);
     }
